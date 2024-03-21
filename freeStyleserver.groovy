@@ -8,7 +8,7 @@ freeStyleJob("${FolderName}/server"){
         credentialsBinding{
             usernameVariable('GIT_USERNAME')
             passwordVariable('GIT_PASSWORD')
-            credentialsId('JenkinsGIT')
+            credentialsId('JenkinsGithubApp')
         }
         withFolderProperties()
     }
