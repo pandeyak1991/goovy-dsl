@@ -5,11 +5,11 @@ freeStyleJob("${FolderName}/server"){
     }
     wrappers{
         preBuildCleanup()
-        // credentialsBinding{
-        //     usernameVariable('GIT_USERNAME')
-        //     passwordVariable('GIT_PASSWORD')
-        //     credentialsId('JenkinsGIT')
-        // }
+        credentialsBinding{
+            usernameVariable('GIT_USERNAME')
+            passwordVariable('GIT_PASSWORD')
+            credentialsId('JenkinsGIT')
+        }
         withFolderProperties()
     }
 }
