@@ -10,5 +10,5 @@ freeStyleJob("${FolderName}/server"){
     //     //     passwordVariable('GIT_PASSWORD')
     //     //     credentialsId('JenkinsGIT')
     //     // }
-    }
+    // }
 }
