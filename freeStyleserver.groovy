@@ -3,12 +3,12 @@ freeStyleJob("${FolderName}/server"){
         daysToKeep(10)
         numToKeep(10)
     }
-    wrappers{
-        preBuildCleanup()
-        // credentialsBinding{
-        //     usernameVariable('GIT_USERNAME')
-        //     passwordVariable('GIT_PASSWORD')
-        //     credentialsId('JenkinsGIT')
-        // }
+    // wrappers{
+    //     preBuildCleanup()
+    //     // credentialsBinding{
+    //     //     usernameVariable('GIT_USERNAME')
+    //     //     passwordVariable('GIT_PASSWORD')
+    //     //     credentialsId('JenkinsGIT')
+    //     // }
     }
 }
