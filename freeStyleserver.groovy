@@ -1,6 +1,6 @@
 freeStyleJob("${FolderName}/server"){
     logRotator{
-        daysTokeep(10)
+        daysToKeep(10)
         numToKeep(10)
     }
 }
