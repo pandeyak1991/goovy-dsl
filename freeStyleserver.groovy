@@ -3,4 +3,7 @@ freeStyleJob("${FolderName}/server"){
         daysToKeep(10)
         numToKeep(10)
     }
+    wrappers{
+        preBuildCleanUp()
+    }
 }
