@@ -6,9 +6,11 @@ freeStyleJob("${FolderName}/server"){
     wrappers{
         preBuildCleanup()
         credentialsBinding{
+            usernamePassword{
             usernameVariable('GIT_USERNAME')
             passwordVariable('GIT_PASSWORD')
             credentialsId('JenkinsGithubApp')
+        }
         }
         withFolderProperties()
     }
