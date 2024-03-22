@@ -37,9 +37,11 @@ freeStyleJob("${FolderName}/server"){
                     predefinedProp("MAIN_JOB_BUILD_NUMBER","\${BUILD_NUMBER}")
                 }
             }
-
         }
-        
+        copyArtifacts{
+            projectName("Common-jobs/common-docker-build-arm")
+        }
+
     }
 
     
