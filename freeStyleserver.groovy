@@ -17,10 +17,14 @@ freeStyleJob("${FolderName}/server"){
     steps{
         shell("""touch propsfile
         echo "MFG_DATE=\$(date '+%Y-%m-%d')" >>propsfile
-        echo "SERVER_VERSION= ${API_SERVER_VERSION}.\$BUILD_NUMBER >> propsfile""")
+        echo "SERVER_VERSION=${API_SERVER_VERSION}.\$BUILD_NUMBER >> propsfile""")
         environmentVariables{
             propertiesFile("\$WORKSPACE/propsfile")
         }
+    steps{
+        shell("""
+        echo $SERVER_VERSION """)
     }
-
+    }
+    
 }
