@@ -5,12 +5,6 @@ pipelineJob("Common-jobs/common-docker-build-arm"){
     }
     parameters{
         stringParam{
-            name()
-            defaultVaulue('')
-            description('')
-            trim(false)
-        }
-        stringParam{
             name('REPO_URL')
             defaultVaulue('')
             description('')
