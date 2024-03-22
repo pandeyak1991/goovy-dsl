@@ -36,7 +36,7 @@ pipelineJob("Common-jobs/common-docker-build-arm"){
         }
     }
     properties{
-        copyArtifactsPermission{
+        copyArtifactPermission{
             projectNames("*")
         }
     }
