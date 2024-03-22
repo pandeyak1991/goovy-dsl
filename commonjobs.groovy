@@ -1,4 +1,4 @@
-pipelineJobs("Common-jobs/common-docker-build-arm"){
+pipelineJob("Common-jobs/common-docker-build-arm"){
     logRotator{
         daysToKeep(10)
         numToKeep(10)
