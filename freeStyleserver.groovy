@@ -52,6 +52,9 @@ freeStyleJob("${FolderName}/server"){
                 }
             }
         }
+        publishers {
+        archiveArtifacts('**/*.txt')
+        }
 
     }
 
