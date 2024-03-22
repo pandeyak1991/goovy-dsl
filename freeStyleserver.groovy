@@ -39,7 +39,7 @@ freeStyleJob("${FolderName}/server"){
             }
         }
         copyArtifacts{
-            projectName("Common-jobs/common-docker-build-arm")
+            projectName("Common-jobs/common-docker-builder-arm")
             fingerprintArtifacts(true)
             selector{
                 specific{
