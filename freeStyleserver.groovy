@@ -23,7 +23,7 @@ freeStyleJob("${FolderName}/server"){
         }
     steps{
         shell("""
-        echo $SERVER_VERSION """)
+        echo \${SERVER_VERSION}""")
     }
     }
     
