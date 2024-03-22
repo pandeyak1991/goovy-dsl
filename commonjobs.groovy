@@ -50,8 +50,9 @@ pipelineJob("Common-jobs/common-docker-builder-arm"){
                      git branch: 'main', url: 'https://github.com/pandeyak1991/goovy-dsl.git'
                 }
                 stage('Docker-build'){
-                    sh "echo docker build  >file.txt"
-                    sh "\${BUILD_NUMBER} >> file.txt"
+                    sh "echo docker build  >>file.txt"
+                    sh "echo Upstream Build_number is: ${MAIN_JOB_BUILD_NUMBER} >> file.txt"
+                    sh "printenv"
                 }
                 stage('Archiving Artifacts'){
                     archiveArtifacts '*.txt'
