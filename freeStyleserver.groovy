@@ -40,6 +40,12 @@ freeStyleJob("${FolderName}/server"){
         }
         copyArtifacts{
             projectName("Common-jobs/common-docker-build-arm")
+            fingerprintArtifacts(true)
+            selector{
+                specific{
+                    buildNumber("\$TRIGGERED_BUILD_NUMBER_Common_jobs_common_docker_builder_arm")
+                }
+            }
         }
 
     }
