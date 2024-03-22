@@ -6,31 +6,31 @@ pipelineJob("Common-jobs/common-docker-build-arm"){
     parameters{
         stringParam{
             name('REPO_URL')
-            defaultVaulue('')
+            defaultValue('')
             description('')
             trim(false)
         }
         stringParam{
             name('COMMIT_ID')
-            defaultVaulue('')
+            defaultValue('')
             description('')
             trim(false)
         }
         stringParam{
             name('MFG_DATE')
-            defaultVaulue('')
+            defaultValue('')
             description('')
             trim(false)
         }
         stringParam{
             name('SERVER_VERSION')
-            defaultVaulue('')
+            defaultValue('')
             description('')
             trim(false)
         }
         stringParam{
             name('MAIN_JOB_BUILD_NUMBER')
-            defaultVaulue('')
+            defaultValue('')
             description('')
             trim(false)
         }
