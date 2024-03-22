@@ -21,10 +21,10 @@ freeStyleJob("${FolderName}/server"){
         environmentVariables{
             propertiesFile("\$WORKSPACE/propsfile")
         }
-    steps{
+  
         shell("""
         echo \${SERVER_VERSION}""")
     }
-    }
+
     
 }
