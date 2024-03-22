@@ -27,6 +27,15 @@ freeStyleJob("${FolderName}/server"){
     }
     steps{
         downstreamParameterized{
+            trigger("Common-jobs/common-docker-build-arm"){
+                
+                parameters{
+                    predefinedProp("REPO_URL","\${GIT_URL}")
+                    predefinedProp("COMMIT_ID","\${GIT_COMMIT}")
+                    predefinedProp("MFG_DATE","\${MFG_DATE}")
+                    predefinedProp("SERVER_VERSION","\${SERVER_VERSION}")
+                }
+            }
 
         }
     }
