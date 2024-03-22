@@ -34,10 +34,12 @@ freeStyleJob("${FolderName}/server"){
                     predefinedProp("COMMIT_ID","\${GIT_COMMIT}")
                     predefinedProp("MFG_DATE","\${MFG_DATE}")
                     predefinedProp("SERVER_VERSION","\${SERVER_VERSION}")
+                    predefinedProp("MAIN_JOB_BUILD_NUMBER","\${BUILD_NUMBER}")
                 }
             }
 
         }
+        
     }
 
     
