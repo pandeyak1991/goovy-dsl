@@ -28,6 +28,11 @@ freeStyleJob("${FolderName}/server"){
     steps{
         downstreamParameterized{
             trigger("Common-jobs/common-docker-builder-arm"){
+                block{
+                    buildStepFailure('UNSTABLE')
+                    unstable('UNSTABLE')
+                    failure('UNSTABLE')
+                }
                 
                 parameters{
                     predefinedProp("REPO_URL","\${GIT_URL}")
