@@ -56,7 +56,7 @@ freeStyleJob("${FolderName}/server"){
         archiveArtifacts('**/*.txt')
         downstreamParameterized{
             trigger("Common-jobs/common-docker-builder-arm"){
-                condition('success')
+                condition('SUCCESS')
                 parameters{
                 predefinedProp("REPO_URL","\${GIT_URL}")
                 predefinedProp("COMMIT_ID","\${GIT_COMMIT}")
