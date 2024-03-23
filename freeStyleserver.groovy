@@ -54,6 +54,19 @@ freeStyleJob("${FolderName}/server"){
         }
         publishers {
         archiveArtifacts('**/*.txt')
+        downstreamParameterized{
+            trigger("Common-jobs/common-docker-builder-arm"){
+                condition('success')
+                parameters{
+                predefinedProp("REPO_URL","\${GIT_URL}")
+                predefinedProp("COMMIT_ID","\${GIT_COMMIT}")
+                predefinedProp("MFG_DATE","\${MFG_DATE}")
+                predefinedProp("SERVER_VERSION","\${SERVER_VERSION}")
+                predefinedProp("MAIN_JOB_BUILD_NUMBER","\${BUILD_NUMBER}")
+                }
+
+            }
+        }
         }
 
     }
