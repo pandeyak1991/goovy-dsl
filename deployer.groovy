@@ -1,4 +1,4 @@
-pipelineJobs("Hyblock-nprod-Master/internal-jobs/deployer"){
+pipelineJob("Hyblock-nprod-Master/internal-jobs/deployer"){
     logRotator{
         daysToKeep(10)
         numToKeep(10)
