@@ -70,7 +70,7 @@ freeStyleJob("${FolderName}/server"){
         }
         properties{
             copyArtifactsPermission{
-                projectNames('Hyblock-nprod-Master/internal-jobs/deployer')
+                projectNames("Hyblock-nprod-Master/internal-jobs/deployer")
             }
             promotions{
                 def List list_of_region="${LIST_OF_REGIONS}".split(',').collect{it as String}
