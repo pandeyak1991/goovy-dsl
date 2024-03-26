@@ -79,7 +79,7 @@ freeStyleJob("${FolderName}/server"){
                     List branches=[
                        [ env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV1}_${list_of_region[x]}",star:"star-${list_of_icons[x]}-e"]
                     ]
-                    branch.each{ branch ->
+                    branches.each{ branch ->
                     if (branch.i <=("${NO_OF_ENV}".toInteger())){
                         promotions{
                             name(branch.promote)
