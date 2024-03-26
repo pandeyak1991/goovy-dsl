@@ -52,6 +52,7 @@ freeStyleJob("${FolderName}/server"){
                 }
             }
         }
+    }
         publishers {  //Publishing artifact copied from triggerd job aboved
             archiveArtifacts('**/*.txt')
                 downstreamParameterized{ // Triggering downstream job  when above jobs is success/stable
@@ -118,12 +119,9 @@ freeStyleJob("${FolderName}/server"){
                         }
                     }
 
-                    }
                 }
             }
         }
-
     }
 
-    
 }
