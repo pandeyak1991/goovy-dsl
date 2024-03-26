@@ -106,7 +106,7 @@ freeStyleJob("${FolderName}/server"){
                                         block{
                                             buildStepFailure('FAILURE')
                                             failure('FAILURE')
-                                            unstable('FAILURE')
+                                            unstable('UNSTABLE')
                                         }
                                         parameters{
                                             predefinedProp("JobName","\${PROMOTED_JOB_NAME}")
