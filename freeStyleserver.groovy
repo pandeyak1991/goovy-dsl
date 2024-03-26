@@ -80,14 +80,14 @@ freeStyleJob("${FolderName}/server"){
                     List branches=[
                        [ env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV1}_${list_of_region[x]}",star:"star-${list_of_icons[x]}-e"]
                     ]
-                    branches.each{ branch ->
-                    if (branch.i <=("${NO_OF_ENV}".toInteger())){
-                        promotions{
+                    branches.each { branch ->
+                    if (branch.i <=("$NO_OF_ENV".toInteger())){
+                        promotion{
                             name(branch.promote)
                             icon(branch.star)
                             conditions{
                                 manual(branch.promoter){
-                                    if (branch.env_name =="$RELEASE_ENVIRONMENT_NAME"){
+                                    if (branch.env_name == "$RELEASE_ENVIRONMENT_NAME" ){
                                         parameters{
                                             testParam("Approve Message","","Provide a Reason")
                                         }
