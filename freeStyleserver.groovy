@@ -118,7 +118,7 @@ freeStyleJob("${FolderName}/server"){
                     //     }
                     // }
 
-                    }
+                    // }
                 }
             }
         }
