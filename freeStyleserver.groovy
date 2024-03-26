@@ -105,7 +105,7 @@ freeStyleJob("${FolderName}/server"){
                                     trigger("./Hyblock-nprod-Master/internal-jobs/deployer"){
                                         block{
                                             buildStepFailure('FAILURE')
-                                      MAIN_JOB_BUILD_NUMBER      failure('FAILURE')
+                                            failure('FAILURE')
                                             unstable('FAILURE')
                                         }
                                         parameters{
