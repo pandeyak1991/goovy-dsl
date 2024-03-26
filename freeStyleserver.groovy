@@ -74,7 +74,7 @@ freeStyleJob("${FolderName}/server"){
             }
             promotions{
                 def List list_of_region="${LIST_OF_REGIONS}".split(',').collect{it as String}
-                def List list_of_icons="${LIST_OF_ICONS}".split(,).collect(it as String)
+                def List list_of_icons="${LIST_OF_ICONS}".split(',').collect(it as String)
                 for (x =0 ;x <list_of_region.size(); x++){
                     List branches=[
                         env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV1}_${list_of_region[x]}",star:"${list_of_icon[x]}-e"
