@@ -79,44 +79,44 @@ freeStyleJob("${FolderName}/server"){
                     List branches=[
                         env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV1}_${list_of_region[x]}",star:"star-${list_of_icons[x]}-e"
                     ]
-                    branch.each{ branch ->
-                    if (branch.i <=("${NO_OF_ENV}".toInteger())){
-                        promotions{
-                            name(branch.promote)
-                            icon(branch.star)
-                            conditions{
-                                manual(branch.promoter){
-                                    if (branch.env_name =="$RELEASE_ENVIRONMENT_NAME"){
-                                        parameters{
-                                            testParam("Approve Message","","Provide a Reason")
-                                        }
-                                    }
-                                }
-                                if (branch.i!=1){
-                                    upstream(branch.upstream)
-                                }
-                            }
-                            wrappers{
-                                timestamps()
-                                withFolderProperties()
-                            }
-                            actions{
-                                downstreamParameterized{
-                                    trigger("./Hyblock-nprod-Master/internal-jobs/deployer"){
-                                        block{
-                                            buildStepFailure('FAILURE')
-                                            failure('FAILURE')
-                                            unstable('FAILURE')
-                                        }
-                                        parameters{
-                                            predefinedProp("JobName","\${PROMOTED_JOB_NAME}")
-                                            predefinedProp("BUILDNO","\${PROMOTED_NUMBER}")
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    // branch.each{ branch ->
+                    // if (branch.i <=("${NO_OF_ENV}".toInteger())){
+                    //     promotions{
+                    //         name(branch.promote)
+                    //         icon(branch.star)
+                    //         conditions{
+                    //             manual(branch.promoter){
+                    //                 if (branch.env_name =="$RELEASE_ENVIRONMENT_NAME"){
+                    //                     parameters{
+                    //                         testParam("Approve Message","","Provide a Reason")
+                    //                     }
+                    //                 }
+                    //             }
+                    //             if (branch.i!=1){
+                    //                 upstream(branch.upstream)
+                    //             }
+                    //         }
+                    //         wrappers{
+                    //             timestamps()
+                    //             withFolderProperties()
+                    //         }
+                    //         actions{
+                    //             downstreamParameterized{
+                    //                 trigger("./Hyblock-nprod-Master/internal-jobs/deployer"){
+                    //                     block{
+                    //                         buildStepFailure('FAILURE')
+                    //                         failure('FAILURE')
+                    //                         unstable('FAILURE')
+                    //                     }
+                    //                     parameters{
+                    //                         predefinedProp("JobName","\${PROMOTED_JOB_NAME}")
+                    //                         predefinedProp("BUILDNO","\${PROMOTED_NUMBER}")
+                    //                     }
+                    //                 }
+                    //             }
+                    //         }
+                    //     }
+                    // }
 
                     }
                 }
