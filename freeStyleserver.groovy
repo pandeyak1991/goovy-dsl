@@ -69,7 +69,7 @@ freeStyleJob("${FolderName}/server"){
             }
         }
         properties{
-            copyArtifactsPermission{
+            copyArtifactPermission{
                 projectNames("Hyblock-nprod-Master/internal-jobs/deployer")
             }
             promotions{
