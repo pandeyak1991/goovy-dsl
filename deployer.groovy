@@ -47,20 +47,34 @@ pipelineJob("Hyblock-nprod-Master/internal-jobs/deployer"){
             description('')
             trim(false)
         }
+        stringParam{
+            name('PromotedBuild_NUMBER')
+            defaultValue('')
+            description('')
+            trim(false)
+        }
     }
     definition{
         cpsFlowDefinition{
             sandbox(true)
-            script('''
+            script('''             
             node{
-                stage('Copy-Artifacts'){
-                    copyArtifacts filter: "**/*.txt"
+                 stage('p'){
+                    sh 'printenv'
+                }
+                stage('Copy Archive') {
+                   step ([$class: 'CopyArtifact',
+                        projectName: '../server',
+                        filter: "*.txt",
+                        target: 'Infra',
+                        selector: [$class: 'SpecificBuildSelector', buildNumber: '${PromotedBuild_NUMBER}']]);
                 }
                 stage('ls file'){
-                    sh 'ls -l'
+                    sh 'ls -l Infra'
+                    sh 'cat Infra/file.txt'
                 }
-            }'''
-            
+            }
+             '''
             )
         }
     }
