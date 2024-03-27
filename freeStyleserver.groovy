@@ -104,7 +104,7 @@ freeStyleJob("${FolderName}/server"){
                             }
                             actions{
                                 downstreamParameterized{
-                                    trigger("./Hyblock-nprod-Master/internal-jobs/deployer"){
+                                    trigger("internal-jobs/deployer"){
                                         block{
                                             buildStepFailure('FAILURE')
                                             failure('FAILURE')
