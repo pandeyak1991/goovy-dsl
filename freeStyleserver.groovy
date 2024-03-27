@@ -64,7 +64,7 @@ freeStyleJob("${FolderName}/server"){
                         predefinedProp("MFG_DATE","\${MFG_DATE}")
                         predefinedProp("SERVER_VERSION","\${SERVER_VERSION}")
                         predefinedProp("MAIN_JOB_BUILD_NUMBER","\${BUILD_NUMBER}")
-                        predefinedProp("PromotedBuild_NUMBER","\${PROMOTED_NUMBER}")
+                        
                     }
 
                 }
@@ -113,6 +113,7 @@ freeStyleJob("${FolderName}/server"){
                                         parameters{
                                             predefinedProp("JobName","\${PROMOTED_JOB_NAME}")
                                             predefinedProp("BUILDNO","\${PROMOTED_NUMBER}")
+                                            predefinedProp("PromotedBuild_NUMBER","\${PROMOTED_NUMBER}")
                                         }
                                     }
                                 }
