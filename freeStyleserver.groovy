@@ -88,6 +88,7 @@ freeStyleJob("${FolderName}/server"){
                             icon(branch.star)
                             conditions{
                                 manual(branch.promoter){
+                                    println "$RELEASE_ENVIRONMENT_NAME"
                                     if (branch.env_name == "$RELEASE_ENVIRONMENT_NAME" ){
                                         parameters{
                                             testParam("Approve Message","","Provide a Reason")
