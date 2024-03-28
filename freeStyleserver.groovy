@@ -80,7 +80,7 @@ freeStyleJob("${FolderName}/server"){
                 for (x =0 ;x <list_of_region.size(); x++){
                     List branches=[
                        [ env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV1}_${list_of_region[x]}",star:"star-${list_of_icons[x]}-e"],
-                       [ env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV2}_${list_of_region[x]}",star:"star-${list_of_icons[x]}-e",upstream: "DEPLOY_TO_${ENV1}_${list_of_region[x]}" ]
+                       [ env_name:"${ENV1}",promote:"DEPLOY_TO_${ENV2}_${list_of_region[x]}",star:"star-${list_of_icons[x]}-w",upstream: "DEPLOY_TO_${ENV1}_${list_of_region[x]}" ]
 
                     ]
                     branches.each { branch ->
