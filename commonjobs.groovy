@@ -57,6 +57,10 @@ pipelineJob("Common-jobs/common-docker-builder-arm"){
                 stage('Archiving Artifacts'){
                     archiveArtifacts '*.txt'
                 }
+                stage("reading-from-propsfile"){
+                def props = readJSON file: 'properties/task-defination.json'
+                value=props.version
+                }
             }
             ''')
         }
