@@ -60,6 +60,7 @@ pipelineJob("Common-jobs/common-docker-builder-arm"){
                 stage("reading-from-propsfile"){
                 def props = readJSON file: 'properties/task-defination.json'
                 value=props.version
+                println value
                 }
             }
             ''')
