@@ -90,7 +90,7 @@ pipelineJob("Common-jobs/build-forever"){
             trim(false)
         }
     }
-    defination{
+    definition{
         cpsFlowDefinition{
             sandbox(true)
             script('''
