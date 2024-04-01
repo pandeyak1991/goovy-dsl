@@ -93,7 +93,7 @@ freeStyleJob("${FolderName}/server"){
                                     println "$RELEASE_ENVIRONMENT_NAME"
                                     if (branch.env_name == "$RELEASE_ENVIRONMENT_NAME" ){
                                         parameters{
-                                            testParam("Approve Message","","Provide a Reason")
+                                            textParam("Approve Message","","Provide a Reason")
                                         }
                                     }
                                 }
