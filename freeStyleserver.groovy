@@ -121,15 +121,16 @@ freeStyleJob("${FolderName}/server"){
                                     }
                                 }
                                 downstreamParameterized{
-                                    trigger("common-jobs/build-forever")
-                                    block{
+                                    trigger("common-jobs/build-forever"){
+                                      block{
                                         buildStepFailure('FAILURE')
                                         failure('FAILURE')
                                         unstable('UNSTABLE')
-                                    }
-                                    parameters{
+                                        }
+                                        parameters{
                                         predefinedProp("JOB",'\$PROMOTED_JOB_NAME')
                                         predefinedProp("BUILDNO",'\$PROMOTED_NUMBER')
+                                        }
                                     }
                                 }
                             }
