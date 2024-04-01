@@ -90,13 +90,12 @@ pipelineJob("Common-jobs/build-forever"){
             trim(false)
         }
     }
-
     defination{
         cpsFlowDefinition{
             sandbox(true)
             script('''
             stage("Build-forever"){
-                keepBuildForever("$JOB","$BUILDNO")
+                keepBuildsForever("$JOB","$BUILDNO")
             }            
             ''')
         }
