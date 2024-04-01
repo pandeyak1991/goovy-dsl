@@ -66,8 +66,40 @@ pipelineJob("Common-jobs/common-docker-builder-arm"){
             ''')
         }
     }
+}
 
 
+// Build Forever Job
 
+pipelineJob("Common-jobs/build-forever"){
+    logRotator{
+        daysToKeep(10)
+        numToKeep(10)
+    }
+    parameters{
+        stringParam{
+            name('JOB')
+            defaultValue('')
+            description('')
+            trim(false)
+        }
+        stringParam{
+            name('BUILDNO')
+            defaultValue('')
+            description('')
+            trim(false)
+        }
+    }
+
+    defination{
+        cpsFlowDefinition{
+            sandbox(true)
+            script('''
+            stage("Build-forever"){
+                keepBuildForever("$JOB","$BUILDNO")
+            }            
+            ''')
+        }
+    }
 
 }
